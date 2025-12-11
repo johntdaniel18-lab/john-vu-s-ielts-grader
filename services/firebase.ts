@@ -5,7 +5,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCa7TQ1fUnqlbQ0noZ3dEGgyqjFKFQSONk",
+  // Cast import.meta to any to avoid TypeScript error 'Property env does not exist on type ImportMeta'
+  apiKey: (import.meta as any).env.VITE_FIREBASE_API_KEY,
   authDomain: "ielts-marker-f24c0.firebaseapp.com",
   projectId: "ielts-marker-f24c0",
   storageBucket: "ielts-marker-f24c0.firebasestorage.app",
