@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Vu's IELTS Grader</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Cropper.js for image cropping -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Import Map for ES Modules -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.26.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js",
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js",
+    "firebase/": "https://esm.sh/firebase@^12.6.0/"
+  }
+}
+</script>
+    
+    <!-- Global styles and new theme variables -->
+    <style>
+      :root {
+        --color-background: #f8fafc;
+      }
+
+      html {
+        font-size: 16px;
+      }
+      
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        /* Modern Gradient Background */
+        background-color: #f3f4f6;
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(225,39%,30%,0) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, transparent 50%);
+        background-attachment: fixed;
+        color: #1e293b;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Subtle mesh for futuristic feel */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: 
+          radial-gradient(circle at 15% 50%, rgba(219, 234, 254, 0.5), transparent 25%),
+          radial-gradient(circle at 85% 30%, rgba(224, 231, 255, 0.5), transparent 25%);
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      h1, h2, h3, .brand-font {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.025em; /* Tighter tracking for modern look */
+      }
+
+      /* Custom animation for fade-in effect */
+      @keyframes fade-in {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+          animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Glassmorphism Utilities */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Cropper.js overrides */
+      .cropper-bg {
+          background-image: none !important;
+      }
+      .cropper-view-box {
+          outline: 1px solid #3b82f6;
+          outline-color: rgba(59, 130, 246, 0.75);
+      }
+      .cropper-modal {
+          background-color: #0f172a;
+          opacity: 0.6;
+      }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <!-- The root element for the React application -->
+    <div id="root"></div>
+    
+    <!-- The entry point for the React application -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

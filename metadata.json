@@ -1,0 +1,5 @@
+{
+  "name": "John Vu's IELTS Grader",
+  "description": "The official IELTS writing evaluation tool by John Vu. Teachers can input questions and student essays (text or image) to receive detailed band scores, criteria breakdowns, and annotated improvements.",
+  "requestFramePermissions": []
+}
